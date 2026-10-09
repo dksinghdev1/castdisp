@@ -1,0 +1,24 @@
+name: castdisp
+version: '1.0.0'
+summary: Universal Linux screen and audio projector overlay
+description: |
+  CastDisp acts like the standard Windows Super+P utility across Linux window environments.
+confinement: strict
+base: core22
+
+apps:
+  castdisp:
+    command: bin/castdisp
+    plugs:
+      - x11
+      - wayland
+      - desktop
+      - audio-playback
+
+parts:
+  castdisp:
+    plugin: dump
+    source: .
+    organize:
+      src/castdisp.py: bin/castdisp
+      src/audio_switcher.py: bin/audio_switcher.py

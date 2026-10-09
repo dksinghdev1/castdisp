@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=CastDisp Switcher
+Comment=Rotate display layout across external monitors
+Exec=castdisp
+Icon=video-display
+Terminal=false
+Categories=Utility;Settings;

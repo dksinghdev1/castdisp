@@ -1,0 +1,21 @@
+name: Automated Release & Deployment Pipeline
+on:
+  push:
+    tags:
+      - 'v*'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pytest && pytest test_castdisp.py
+  deploy-snap:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+  deploy-ppa:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
